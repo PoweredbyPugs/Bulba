@@ -1,0 +1,14 @@
+{
+  "name": "bulba-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bulba Obsidian theme — modular SCSS build",
+  "scripts": {
+    "build": "sass src/main.scss theme.css --no-source-map",
+    "dev": "sass --watch src/main.scss theme.css --no-source-map",
+    "set-bg": "bash tools/set-bg.sh"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
+  }
+}

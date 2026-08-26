@@ -1,0 +1,823 @@
+
+.workspace-split.mod-horizontal>*>.workspace-leaf-resize-handle,
+.workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+.workspace-split.mod-right-split>.workspace-leaf-resize-handle,
+.workspace-split.mod-vertical>*>.workspace-leaf-resize-handle {
+    border-radius: var(--divider-radius)
+}
+
+.workspace-split.mod-horizontal:not(.mod-left-split, .mod-right-split)>*>.workspace-leaf-resize-handle,
+.workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+.workspace-split.mod-right-split>.workspace-leaf-resize-handle,
+.workspace-split.mod-vertical>*>.workspace-leaf-resize-handle {
+    --divider-color: transparent
+}
+
+.workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+.workspace-split.mod-right-split>.workspace-leaf-resize-handle,
+.workspace-split.mod-vertical>*>.workspace-leaf-resize-handle {
+    --divider-vertical-height: calc(100% - calc(var(--header-height) + var(--editor-pane-margin)) - calc(var(--editor-border-radius) * 2));
+    bottom: calc(var(--editor-pane-margin) + var(--editor-border-radius))
+}
+
+.workspace-split.mod-horizontal:not(.mod-left-split, .mod-right-split)>*>.workspace-leaf-resize-handle {
+    width: calc(100% - var(--editor-border-radius)*2);
+    left: var(--editor-border-radius);
+    right: var(--editor-border-radius)
+}
+
+body:not(.is-phone) .workspace .workspace-tabs .workspace-tab-container:not(.mod-left-split .workspace-tab-container, .mod-right-split .workspace-tab-container) {
+    margin-left: calc(var(--editor-pane-margin)/3);
+    margin-right: calc(var(--editor-pane-margin)/3)
+}
+
+body:not(.is-phone) .workspace:not(.is-left-sidedock-open.is-right-sidedock-open) .mod-root.workspace-split.mod-vertical {
+    margin-left: calc(var(--editor-pane-margin)/2);
+    margin-right: calc(var(--editor-pane-margin)/2);
+    padding-bottom: var(--editor-pane-margin)
+}
+
+body:not(.is-phone) .workspace:is(.is-left-sidedock-open.is-right-sidedock-open) .workspace-split.mod-left-split {
+    margin-right: calc(-1*var(--editor-pane-margin)/3)
+}
+
+body:not(.is-phone) .workspace:is(.is-left-sidedock-open.is-right-sidedock-open) .mod-root.workspace-split.mod-vertical {
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: var(--editor-pane-margin)
+}
+
+body:not(.is-phone) .workspace:is(.is-left-sidedock-open.is-right-sidedock-open) .workspace-split.mod-right-split {
+    margin-left: calc(-1*var(--editor-pane-margin)/3)
+}
+
+body:not(.is-phone) .workspace:is(.is-left-sidedock-open):not(.is-right-sidedock-open) .workspace-split.mod-left-split {
+    margin-right: calc(-1*var(--editor-pane-margin)/3)
+}
+
+body:not(.is-phone) .workspace:is(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root.workspace-split.mod-vertical {
+    margin-left: 0;
+    margin-right: calc(var(--editor-pane-margin)/2);
+    padding-bottom: var(--editor-pane-margin)
+}
+
+body:not(.is-phone) .workspace:is(.is-right-sidedock-open):not(.is-left-sidedock-open) .mod-root.workspace-split.mod-vertical {
+    margin-left: calc(var(--editor-pane-margin)/2);
+    margin-right: 0;
+    padding-bottom: var(--editor-pane-margin)
+}
+
+body:not(.is-phone) .workspace:is(.is-right-sidedock-open):not(.is-left-sidedock-open) .workspace-split.mod-right-split {
+    margin-left: calc(-1*var(--editor-pane-margin)/3)
+}
+
+.mobile-navbar {
+    border-top: 1px solid var(--background-modifier-border);
+    box-shadow: var(--navbar-shadow)
+}
+
+.mobile-toolbar {
+    width: auto;
+    background: var(--mobile-toolbar-bg);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-l);
+    margin: calc(-1*var(--size-2-3)) var(--size-4-2) var(--size-4-2) var(--size-4-2)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon,
+.workspace-ribbon .side-dock-settings .clickable-icon {
+    color: var(--non-alternating-color);
+    background: var(--icon-bg);
+    padding: var(--ribbon-icon-spacing) var(--size-2-3)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon:hover,
+.workspace-ribbon .side-dock-settings .clickable-icon:hover {
+    background: var(--icon-bg-hover);
+    cursor: var(--cursor)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon.is-active,
+.workspace-ribbon .side-dock-settings .clickable-icon.is-active {
+    background: var(--icon-bg-active)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+1).is-active,
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+1):hover,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+1).is-active,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+1):hover {
+    color: var(--alternating-color-1)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+1):active,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+1):active {
+    color: var(--alternating-color-1-hover-active)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+2).is-active,
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+2):hover,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+2).is-active,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+2):hover {
+    color: var(--alternating-color-2)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+2):active,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+2):active {
+    color: var(--alternating-color-2-hover-active)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+3).is-active,
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+3):hover,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+3).is-active,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+3):hover {
+    color: var(--alternating-color-3)
+}
+
+.workspace-ribbon .side-dock-actions .clickable-icon:nth-child(3n+3):active,
+.workspace-ribbon .side-dock-settings .clickable-icon:nth-child(3n+3):active {
+    color: var(--alternating-color-3-hover-active)
+}
+
+.workspace-ribbon.mod-left {
+    border: var(--ribbon-border-width) solid var(--divider-color);
+    border-left: none;
+    border-radius: 0 var(--ribbon-radius) var(--ribbon-radius) 0;
+    margin-bottom: var(--ribbon-margin-bottom)
+}
+
+.workspace-ribbon.mod-left:before {
+    border-bottom: none
+}
+
+.workspace-drawer-ribbon {
+    border-right: 1px solid var(--background-modifier-border)
+}
+
+body.ribbon-slideout:not(.is-mobile) .workspace-ribbon.mod-left:before {
+    visibility: hidden
+}
+
+body.ribbon-slideout:not(.is-mobile) .workspace-ribbon.workspace-ribbon {
+    --ribbon-background: var(--ribbon-slideout-background);
+    --titlebar-background-focused: var(--ribbon-background);
+    --ribbon-background-collapsed: var(--ribbon-background);
+    position: absolute;
+    left: calc(-1*var(--ribbon-width)/4);
+    opacity: 0;
+    transition: var(--anim-motion-jumpy) var(--anim-duration-moderate);
+    box-shadow: var(--ribbon-slideout-shadow)
+}
+
+body.ribbon-slideout:not(.is-mobile) .workspace-ribbon.workspace-ribbon:hover {
+    left: 0;
+    opacity: 1;
+    transition: var(--anim-motion-jumpy) var(--anim-duration-moderate)
+}
+
+body.ribbon-slideout:not(.is-mobile) .sidebar-toggle-button.mod-left {
+    background: var(--ribbon-background);
+    --tab-container-background: var(--ribbon-background)
+}
+
+body.ribbon-slideout:not(.is-mobile).is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+    padding-left: calc(var(--size-4-2) + var(--frame-left-space) + var(--ribbon-width))
+}
+
+body.ribbon-slideout:not(.is-mobile):not(.is-hidden-frameless.is-frameless) .side-dock-actions {
+    margin-top: var(--header-height)
+}
+
+.nav-header {
+    padding: 0 var(--size-4-2) 0 var(--size-4-2)
+}
+
+.nav-buttons-container {
+    gap: var(--size-4-1);
+    justify-content: left;
+    padding-left: var(--size-2-3);
+    margin-top: var(--size-4-1);
+    margin-bottom: var(--size-4-1)
+}
+
+.nav-action-button {
+    padding: var(--size-2-3) var(--size-2-3)
+}
+
+body:not(.is-mobile) .workspace-split .workspace-sidedock-vault-profile.workspace-sidedock-vault-profile {
+    width: unset;
+    background: var(--vault-name-background);
+    padding: var(--size-2-2) var(--size-2-2);
+    border: var(--vault-name-border);
+    border-radius: var(--radius-m);
+    margin: 0 var(--size-4-2) var(--editor-pane-margin)
+}
+
+body:not(.is-mobile) .workspace-split .workspace-sidedock-vault-profile.workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon {
+    display: none
+}
+
+body:not(.is-mobile) .workspace-split .workspace-sidedock-vault-profile.workspace-sidedock-vault-profile .workspace-drawer-vault-name {
+    color: var(--vault-name-color)
+}
+
+body:not(.is-mobile) .workspace-split .workspace-sidedock-vault-profile.workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+    border-radius: calc(var(--radius-m) - 3px);
+    cursor: var(--cursor)
+}
+
+body:not(.is-mobile) .workspace-split .workspace-sidedock-vault-profile.workspace-sidedock-vault-profile .workspace-drawer-vault-switcher:hover .workspace-drawer-vault-name {
+    color: var(--vault-name-color-hover)
+}
+
+.workspace-drawer-backdrop {
+    backdrop-filter: blur(var(--popup-bg-blur))
+}
+
+.workspace-drawer {
+    background-color: var(--mobile-sidebar-background)
+}
+
+.workspace-drawer-inner {
+    background-color: var(--mobile-sidebar-background)
+}
+
+.workspace-drawer-header,
+.workspace-drawer.is-pinned .workspace-drawer-header {
+    padding: var(--size-4-4) var(--size-4-5) 0 var(--size-4-5)
+}
+
+.workspace-drawer-header-switcher {
+    gap: var(--size-4-2)
+}
+
+.workspace-drawer.mod-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+.workspace-drawer.mod-left:not(.is-pinned) {
+    border-right: 1px solid var(--background-modifier-border);
+    box-shadow: var(--mobile-sidebar-left-shadow)
+}
+
+.workspace-drawer.mod-left.is-pinned {
+    --divider-width: 0
+}
+
+.workspace-drawer.mod-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.workspace-drawer.mod-right:not(.is-pinned) {
+    border-left: 1px solid var(--background-modifier-border);
+    box-shadow: var(--mobile-sidebar-right-shadow)
+}
+
+.workspace-drawer.mod-right.is-pinned {
+    --divider-width: 0
+}
+
+.workspace-drawer-tab-option-item {
+    text-transform: capitalize;
+    padding: var(--size-4-4) var(--size-4-2)
+}
+
+.workspace-drawer .nav-header {
+    padding-left: var(--size-4-3);
+    padding-right: var(--size-4-3)
+}
+
+.workspace-drawer-active-tab-header.tappable {
+    text-transform: capitalize;
+    padding: var(--size-4-2) var(--size-4-3) calc(var(--size-4-2) + var(--button-inset-shadow-size));
+    box-shadow: var(--button-shadow);
+    margin-top: var(--size-2-2);
+    border-radius: calc(var(--radius-m) + 2px)
+}
+
+.workspace-drawer-active-tab-header.tappable:focus-within {
+    box-shadow: var(--button-shadow-focus)
+}
+
+.workspace-drawer-active-tab-chevron {
+    padding-right: 0
+}
+
+.is-tablet .workspace-drawer:not(.is-pinned) {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: calc(var(--editor-border-radius)*2);
+    margin: calc(var(--editor-pane-margin)*3) calc(var(--editor-pane-margin)*3);
+    box-shadow: var(--mobile-sidebar-tablet-shadow)
+}
+
+.status-bar-item {
+    color: var(--status-bar-item-color)
+}
+
+.status-bar-item.mod-clickable:hover,
+.status-bar-item:hover {
+    color: var(--status-bar-item-color-hover);
+    background: var(--status-bar-item-bg-hover)
+}
+
+.status-bar-item.mod-clickable:active {
+    color: var(--status-bar-item-clickable-color-active);
+    background: var(--status-bar-item-clickable-bg-active)
+}
+
+.status-bar-item.plugin-sync:hover {
+    background: var(--status-bar-item-bg-hover)
+}
+
+.status-bar-item.plugin-sync .mod-success {
+    color: var(--sync-icon-success)
+}
+
+.status-bar-item.plugin-sync .mod-success:hover {
+    color: var(--sync-icon-success-hover)
+}
+
+.status-bar-item.plugin-sync .mod-success:active {
+    color: var(--sync-icon-success-active)
+}
+
+.status-bar-item.plugin-sync .mod-working {
+    color: var(--sync-icon-working)
+}
+
+.status-bar-item.plugin-sync .mod-working:hover {
+    color: var(--sync-icon-working-active)
+}
+
+.status-bar-item.plugin-sync .mod-working:active {
+    color: var(--sync-icon-working-active)
+}
+
+body.sb-style-full .status-bar {
+    --status-bar-position: relative;
+    --status-bar-border-width: 0 0 0 0;
+    margin-top: calc(var(--editor-pane-margin)*-1)
+}
+
+body.sb-style-slideupfull .status-bar {
+    --status-bar-position: relative;
+    --status-bar-border-width: 0 0 0 0;
+    transition: var(--anim-motion-jumpy) var(--anim-duration-moderate);
+    margin-top: calc(-1*var(--editor-pane-margin));
+    margin-bottom: calc(-1*var(--editor-pane-margin)*1.6)
+}
+
+body.sb-style-slideupfull .status-bar-item {
+    opacity: 0;
+    transition: opacity var(--anim-motion-smooth) var(--anim-duration-moderate)
+}
+
+body.sb-style-slideupfull .status-bar:hover {
+    margin-bottom: 0;
+    transition: var(--anim-motion-jumpy) var(--anim-duration-moderate)
+}
+
+body.sb-style-slideupfull .status-bar:hover .status-bar-item {
+    opacity: 1;
+    transition: opacity var(--anim-motion-smooth) var(--anim-duration-moderate)
+}
+
+body.sb-style-slideout .status-bar {
+    --status-bar-position: absolute;
+    --status-bar-background: var(--status-bar-floating-bg);
+    right: -40px;
+    bottom: var(--size-2-3);
+    --status-bar-border-width: 1px;
+    --status-bar-radius: var(--radius-m) 0 0 var(--radius-m);
+    box-shadow: var(--status-bar-floating-shadow);
+    opacity: 0;
+    transition: var(--anim-motion-jumpy) var(--anim-duration-slow)
+}
+
+body.sb-style-slideout .status-bar:hover {
+    right: 0;
+    bottom: var(--size-2-3);
+    opacity: 1;
+    transition: var(--anim-motion-jumpy) var(--anim-duration-slow)
+}
+
+body.sb-style-slideout.sb-sync-only .status-bar {
+    --status-bar-position: absolute;
+    --status-bar-background: var(--status-bar-floating-bg);
+    right: -12px;
+    bottom: var(--size-2-3);
+    --status-bar-border-width: 1px;
+    --status-bar-radius: var(--radius-m) 0 0 var(--radius-m);
+    box-shadow: var(--status-bar-floating-shadow);
+    opacity: 0;
+    transition: var(--anim-motion-jumpy) var(--anim-duration-slow)
+}
+
+body.sb-style-slideout.sb-sync-only .status-bar:hover {
+    right: 0;
+    bottom: var(--size-2-3);
+    opacity: 1;
+    transition: var(--anim-motion-jumpy) var(--anim-duration-slow)
+}
+
+body.sb-style-floating .status-bar {
+    --status-bar-position: absolute;
+    --status-bar-background: var(--status-bar-floating-bg);
+    right: var(--status-bar-floating-offset);
+    bottom: var(--status-bar-floating-offset);
+    --status-bar-border-width: 1px;
+    --status-bar-radius: calc(var(--radius-m) - 2px);
+    opacity: var(--status-bar-floating-opacity);
+    transition: var(--anim-motion-smooth) var(--anim-duration-fast);
+    box-shadow: var(--status-bar-floating-shadow)
+}
+
+body.sb-style-floating .status-bar:hover {
+    opacity: var(--status-bar-floating-opacity-hover);
+    transition: var(--anim-motion-smooth) var(--anim-duration-fast)
+}
+
+body.sb-sync-only .status-bar-item:not(.plugin-sync) {
+    display: none
+}
+
+body.sb-word-count-only .status-bar-item:not(.plugin-word-count) {
+    display: none
+}
+
+.is-grabbing .workspace-tabs,
+.mod-root .workspace-tabs .workspace-leaf,
+.mod-root.workspace-split,
+.workspace,
+.workspace-ribbon.mod-left.is-collapsed,
+.workspace-tab-container {
+    background: var(--titlebar-background)
+}
+
+.is-mobile button:not(button.clickable-icon),
+button:not(button.clickable-icon) {
+    font-weight: var(--component-font-weight);
+    padding: var(--button-padding);
+    border-radius: var(--button-radius);
+    transition: var(--button-anim);
+    transition: var(--background-anim);
+    cursor: var(--cursor)
+}
+
+.is-mobile button:not(button.clickable-icon):active,
+button:not(button.clickable-icon):active {
+    background: var(--interactive-normal);
+    padding: var(--button-padding-active);
+    box-shadow: var(--button-shadow-active);
+    transition: var(--button-anim)
+}
+
+.is-mobile button:not(button.clickable-icon):focus-visible,
+button:not(button.clickable-icon):focus-visible {
+    background: var(--interactive-normal-hover);
+    box-shadow: var(--button-shadow-focus)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-cta,
+button:not(button.clickable-icon).mod-cta {
+    box-shadow: var(--button-accent-shadow)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-cta:hover,
+button:not(button.clickable-icon).mod-cta:hover {
+    box-shadow: var(--button-accent-shadow-hover)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-cta:active,
+button:not(button.clickable-icon).mod-cta:active {
+    background: var(--interactive-accent);
+    box-shadow: var(--button-accent-shadow-active)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-cta:focus-visible,
+button:not(button.clickable-icon).mod-cta:focus-visible {
+    background: var(--interactive-accent-hover);
+    box-shadow: var(--button-shadow-focus)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-warning,
+button:not(button.clickable-icon).mod-warning {
+    color: var(--text-on-accent);
+    background-color: var(--background-modifier-error);
+    box-shadow: var(--button-accent-shadow)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-warning:hover,
+button:not(button.clickable-icon).mod-warning:hover {
+    background-color: var(--background-modifier-error-hover);
+    box-shadow: var(--button-accent-shadow-hover)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-warning:active,
+button:not(button.clickable-icon).mod-warning:active {
+    background: var(--background-modifier-error);
+    box-shadow: var(--button-accent-shadow-active)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-warning:focus-visible,
+button:not(button.clickable-icon).mod-warning:focus-visible {
+    background: var(--background-modifier-error-hover);
+    box-shadow: var(--button-accent-shadow-focus)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-destructive,
+button:not(button.clickable-icon).mod-destructive {
+    color: var(--text-on-accent);
+    background: var(--background-modifier-warning);
+    box-shadow: var(--button-accent-shadow)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-destructive:hover,
+button:not(button.clickable-icon).mod-destructive:hover {
+    background: var(--background-modifier-warning-hover);
+    box-shadow: var(--button-accent-shadow-hover)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-destructive:active,
+button:not(button.clickable-icon).mod-destructive:active {
+    background: var(--background-modifier-warning);
+    box-shadow: var(--button-accent-shadow-active)
+}
+
+.is-mobile button:not(button.clickable-icon).mod-loading,
+button:not(button.clickable-icon).mod-loading {
+    opacity: var(--disabled-component-opacity);
+    cursor: wait
+}
+
+.is-mobile button:not(button.clickable-icon).mod-cancel,
+button:not(button.clickable-icon).mod-cancel {
+    color: var(--text-normal)
+}
+
+button[aria-disabled=true],
+button[disabled=true],
+button[disabled] {
+    opacity: var(--disabled-component-opacity);
+    cursor: not-allowed
+}
+
+.document-search-close-button,
+.modal-close-button {
+    font-size: calc(var(--modal-close-button-size));
+    line-height: var(--modal-close-button-size);
+    color: var(--text-on-accent);
+    background: var(--background-modifier-error);
+    border-radius: var(--close-button-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: var(--cursor)
+}
+
+.document-search-close-button::before,
+.modal-close-button::before {
+    font-weight: var(--font-extralight);
+    font-feature-settings: "case"
+}
+
+.document-search-close-button:hover,
+.modal-close-button:hover {
+    color: var(--text-on-accent);
+    background: var(--background-modifier-error-hover)
+}
+
+.document-search-close-button:active,
+.modal-close-button:active {
+    opacity: var(--button-opacity-active)
+}
+
+.document-search-close-button {
+    padding: .2rem .2rem
+}
+
+.document-search-close-button:active {
+    color: var(--text-on-accent);
+    background: var(--background-modifier-error-hover);
+    opacity: var(--button-opacity-active)
+}
+
+.modal-close-button {
+    width: var(--modal-close-button-size);
+    height: var(--modal-close-button-size);
+    padding: 0;
+    overflow: hidden
+}
+
+.metadata-container .metadata-add-button {
+    font-weight: var(--component-font-weight);
+    text-transform: capitalize;
+    color: var(--text-on-accent);
+    background: var(--interactive-accent);
+    padding: var(--button-metadata-padding);
+    border-radius: var(--button-s-radius);
+    margin-left: var(--size-2-2);
+    box-shadow: var(--button-accent-shadow);
+    transition: var(--button-anim);
+    transition: var(--background-anim)
+}
+
+.metadata-container .metadata-add-button:hover {
+    color: var(--text-on-accent);
+    background: var(--interactive-accent-hover);
+    box-shadow: var(--button-accent-shadow-hover)
+}
+
+.metadata-container .metadata-add-button:hover .text-button-icon {
+    color: var(--text-on-accent)
+}
+
+.metadata-container .metadata-add-button:active {
+    padding: var(--button-metadata-padding-active);
+    box-shadow: var(--button-accent-shadow-active)
+}
+
+.metadata-container .metadata-add-button.text-icon-button:active {
+    color: var(--text-on-accent);
+    background: var(--interactive-accent-hover);
+    padding: var(--button-metadata-padding-active);
+    box-shadow: var(--button-shadow-active);
+    transition: var(--button-anim)
+}
+
+.metadata-container .metadata-add-button.text-icon-button:active .text-button-icon {
+    color: var(--text-on-accent)
+}
+
+.markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget):hover .edit-block-button {
+    padding: var(--size-2-2) var(--size-2-2);
+    background: var(--embed-edit-btn-bg);
+    border-radius: var(--radius-m);
+    box-shadow: var(--embed-edit-btn-shadow)
+}
+
+.markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget):hover .edit-block-button:hover {
+    background: var(--embed-edit-btn-bg-hover);
+    box-shadow: var(--embed-edit-btn-shadow-hover)
+}
+
+.file-embed-link,
+.markdown-embed-link,
+.markdown-rendered button.copy-code-button,
+.markdown-source-view.mod-cm6 .code-block-flair {
+    display: flex;
+    font-weight: var(--component-font-weight);
+    line-height: 1;
+    padding: var(--size-2-3) var(--size-2-3);
+    border-radius: var(--radius-m);
+    transition: var(--anim-duration-superfast) var(--anim-motion-smooth)
+}
+
+.file-embed-link:hover,
+.markdown-embed-link:hover,
+.markdown-rendered button.copy-code-button:hover,
+.markdown-source-view.mod-cm6 .code-block-flair:hover {
+    box-shadow: var(--copy-code-btn-shadow)
+}
+
+@media(hover:hover) {
+
+    .file-embed-link:hover,
+    .markdown-embed-link:hover {
+        box-shadow: var(--copy-code-btn-shadow)
+    }
+}
+
+.mod-community-modal .modal-sidebar button.clickable-icon {
+    color: var(--icon-color);
+    padding: unset
+}
+
+.mod-community-modal .modal-sidebar button.clickable-icon:hover {
+    color: var(--icon-color-hover);
+    background: var(--icon-bg-hover);
+    cursor: var(--cursor)
+}
+
+.mod-community-modal .modal-sidebar button.clickable-icon:active {
+    color: var(--icon-color-active);
+    background: var(--icon-bg-pressed)
+}
+
+.mod-community-modal .modal-sidebar button.clickable-icon.has-active-menu {
+    color: var(--icon-color-active);
+    background: var(--icon-bg-active-menu)
+}
+
+.mod-community-modal .modal-sidebar button.clickable-icon.has-active-menu:hover {
+    color: var(--icon-color-active)
+}
+
+.search-result-file-match button.search-result-file-match-replace-button {
+    padding: var(--button-s-padding);
+    border-radius: var(--button-s-radius);
+    box-shadow: var(--button-shadow)
+}
+
+.search-result-file-match button.search-result-file-match-replace-button:active {
+    padding: var(--button-s-padding)
+}
+
+input[type=checkbox]:hover {
+    cursor: var(--cursor)
+}
+
+.theme-dark input[type=checkbox]:not(:checked),
+.theme-light input[type=checkbox]:not(:checked) {
+    background: var(--checklist-bg)
+}
+
+.theme-dark input[type=checkbox]:hover,
+.theme-light input[type=checkbox]:hover {
+    box-shadow: var(--checklist-shadow-hover)
+}
+
+@media(hover:hover) {
+
+    input[type=color]::-webkit-color-swatch:hover,
+    input[type=color]::-webkit-color-swatch:hover:focus {
+        box-shadow: var(--swatch-shadow), 0 0 0 3px var(--background-modifier-border-hover)
+    }
+}
+
+.dropdown,
+select {
+    font-weight: var(--component-font-weight);
+    border-radius: var(--button-radius);
+    transition: var(--background-anim)
+}
+
+.dropdown:hover,
+select:hover {
+    cursor: var(--cursor)
+}
+
+.dropdown:active,
+select:active {
+    box-shadow: var(--button-shadow-active)
+}
+
+.dropdown:focus,
+select:focus {
+    background-color: var(--interactive-hover);
+    box-shadow: var(--button-shadow-focus)
+}
+
+select[aria-disabled=true],
+select[disabled=true] .dropdown[disabled],
+select[disabled] {
+    opacity: var(--disabled-component-opacity);
+    cursor: not-allowed
+}
+
+kbd,
+span.prompt-instruction-command,
+span.setting-hotkey {
+    color: var(--kbd-color);
+    background: var(--kbd-background);
+    padding: var(--size-2-1) var(--size-2-3) var(--size-2-1) var(--size-2-3);
+    box-shadow: var(--kbd-shadow)
+}
+
+.is-loading:before {
+    height: 4px;
+    background-color: var(--loading-line-color);
+    box-shadow: var(--loading-line-shadow)
+}
+
+.progress-bar {
+    background: var(--background-primary)
+}
+
+.progress-bar-message {
+    font-size: var(--font-ui-smaller);
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: .2em
+}
+
+.progress-bar-indicator {
+    width: 35%;
+    height: var(--size-4-3);
+    border-radius: var(--size-4-3)
+}
+
+.progress-bar-line {
+    height: var(--size-4-3);
+    background: var(--loading-line-bg-color);
+    box-shadow: var(--loading-line-shadow)
+}
+
+.progress-bar-subline {
+    height: var(--size-4-3);
+    background: var(--loading-line-color);
+    box-shadow: var(--loading-line-shadow);
+    animation: var(--anim-duration-moderate) var(--anim-motion-smooth) infinite
+}
+
