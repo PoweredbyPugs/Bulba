@@ -1810,6 +1810,13 @@ body.is-mobile {
   --kanban-new-item-bg-hover: var(--background-primary);
   --kanban-new-item-shadow: none;
   --kanban-new-item-shadow-hover: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --four-winds-north: #3f7d8f;
+  --four-winds-east: #5fae2e;
+  --four-winds-south: #e8965a;
+  --four-winds-west: #e23b4e;
+  --four-winds-central: #7fd0c4;
+  --four-winds-central-ring: #3f7d8f;
+  --four-winds-edge: #7e8b3a;
   --style-settings-container-bg: color-mix(in srgb, var(--background-primary-alt) 50%, transparent);
   --pcr-btn-shadow: inset 0px 0px 0px 1.5px rgba(0, 0, 0, 0.2) ;
 }
@@ -2527,6 +2534,13 @@ body.is-mobile {
   --kanban-new-item-bg-hover: var(--color-d-gray-100);
   --kanban-new-item-shadow: none;
   --kanban-new-item-shadow-hover: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.22), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+  --four-winds-north: #6fb3c4;
+  --four-winds-east: #9ad53a;
+  --four-winds-south: #f0a872;
+  --four-winds-west: #f2586b;
+  --four-winds-central: #8fd9cd;
+  --four-winds-central-ring: #4b8fa1;
+  --four-winds-edge: #a8ad5c;
   --style-settings-container-bg: color-mix(in srgb, var(--background-primary-alt) 50%, transparent);
   --pcr-btn-shadow: inset 0px 0px 0px 1.5px rgba(255, 255, 255, 0.2) ;
 }

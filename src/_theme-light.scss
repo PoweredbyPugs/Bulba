@@ -682,6 +682,13 @@
     --kanban-new-item-bg-hover: var(--background-primary);
     --kanban-new-item-shadow: none;
     --kanban-new-item-shadow-hover: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+    --four-winds-north: #3f7d8f;
+    --four-winds-east: #5fae2e;
+    --four-winds-south: #e8965a;
+    --four-winds-west: #e23b4e;
+    --four-winds-central: #7fd0c4;
+    --four-winds-central-ring: #3f7d8f;
+    --four-winds-edge: #7e8b3a;
     --style-settings-container-bg: color-mix(in srgb, var(--background-primary-alt) 50%, transparent);
     --pcr-btn-shadow: inset 0px 0px 0px 1.5px rgba(0, 0, 0, 0.2)
 }
